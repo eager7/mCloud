@@ -6,7 +6,7 @@ __metaclass__ = type
 import zmq
 
 PULL_ADDRESS = "127.0.0.1:"
-PULL_PORT = 5555
+PULL_PORT = 5556
 
 
 class mZeroMqPullPush():

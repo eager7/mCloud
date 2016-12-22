@@ -1,0 +1,1 @@
+{u'status': 0, u'description': [{u'device_mac_address': 6066005653773238L, u'device_id': 2112, u'device_online': 1, u'device_name': u'CoorDinator'}, {u'device_mac_address': 5149013134011142L, u'device_id': 514, u'device_online': 1, u'device_name': u'WindowCovering-817B'}], u'sequence': 0}

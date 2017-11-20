@@ -59,8 +59,12 @@ reconnect:
 			close(iSockClient);
 			goto reconnect;
 		}
-		printf("recv client ip:%s\n", inet_ntoa(client_addr.sin_addr));
+		printf("recv client ip:%s, data:", inet_ntoa(client_addr.sin_addr));
+        for (int i = 0; i < irecv; ++i) {
+            printf("0x%02x,", aRecv[i]);
+        }printf("\n");
         uint16_t u16Command = (aRecv[4]<<8) | aRecv[5];
+        printf("Commnad:[%d]\n", u16Command);
         tuTimeSyncRequest uTimeSyncRequest = {0};
         tuTimeSyncResponse uTimeSyncResponse = {0};
         tuRFIDRequest uRFIDRequest = {0};

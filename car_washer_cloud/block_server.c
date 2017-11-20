@@ -92,7 +92,7 @@ reconnect:
                 memcpy(&uRFIDResponse.sMessage.u32Time, &iTime, sizeof(iTime));
                 uRFIDResponse.sMessage.u16Command = E_GPRS_COMMAND_RFID_RESPONSE;
                 uRFIDResponse.sMessage.u8Length = 1;
-                uRFIDResponse.sMessage.u32Balance = ntohs(550);
+                uRFIDResponse.sMessage.u32Balance = 550;
                 checkError(send(iSockClient, uRFIDResponse.auData, sizeof(uRFIDResponse.auData), 0));
                 break;
             default:

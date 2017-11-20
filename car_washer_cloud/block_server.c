@@ -64,6 +64,7 @@ reconnect:
             printf("0x%02x,", aRecv[i]);
         }printf("\n");
         uint16_t u16Command = (aRecv[4]<<8) | aRecv[5];
+        u16Command = ntohs(u16Command);
         printf("Commnad:[%d]\n", u16Command);
         tuTimeSyncRequest uTimeSyncRequest = {0};
         tuTimeSyncResponse uTimeSyncResponse = {0};
@@ -91,7 +92,7 @@ reconnect:
                 memcpy(&uRFIDResponse.sMessage.u32Time, &iTime, sizeof(iTime));
                 uRFIDResponse.sMessage.u16Command = E_GPRS_COMMAND_RFID_RESPONSE;
                 uRFIDResponse.sMessage.u8Length = 1;
-                uRFIDResponse.sMessage.u32Balance = 550;
+                uRFIDResponse.sMessage.u32Balance = ntohs(550);
                 checkError(send(iSockClient, uRFIDResponse.auData, sizeof(uRFIDResponse.auData), 0));
                 break;
             default:
